@@ -1,0 +1,16 @@
+{
+  "objects": [
+    {
+      "id": "2",
+      "name": "Объект 2",
+      "securityLevel": "Средний",
+      "description": "Описание объекта 2"
+    },
+    {
+      "id": "6a86",
+      "name": "ewd",
+      "securityLevel": "sds",
+      "description": "2"
+    }
+  ]
+}

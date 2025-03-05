@@ -1,0 +1,118 @@
+/* Основные стили для приложения */
+.App {
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f9;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #333;
+}
+
+/* Стили для логотипа */
+.App-logo {
+  height: 30vmin;
+  pointer-events: none;
+  transition: transform 0.5s ease-in-out;
+}
+
+/* Анимация логотипа */
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-logo:hover {
+  transform: scale(1.1);
+}
+
+/* Стили для заголовка */
+.App-header {
+  background: linear-gradient(135deg, #282c34, #1a1d24);
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Стили для ссылок */
+.App-link {
+  color: #61dafb;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.App-link:hover {
+  color: #21a1f1;
+  transform: translateY(-2px);
+}
+
+/* Кнопка для примера */
+.button {
+  background-color: #61dafb;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  margin-top: 20px;
+}
+
+.button:hover {
+  background-color: #21a1f1;
+  transform: translateY(-2px);
+}
+
+.button:active {
+  transform: translateY(0);
+}
+
+/* Анимация вращения логотипа */
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Дополнительные стили для текста */
+.App-title {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #61dafb;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.App-subtitle {
+  font-size: 1.2rem;
+  color: #ccc;
+  margin-top: 10px;
+}
+
+/* Адаптивные стили */
+@media (max-width: 768px) {
+  .App-logo {
+    height: 25vmin;
+  }
+
+  .App-title {
+    font-size: 2rem;
+  }
+
+  .App-subtitle {
+    font-size: 1rem;
+  }
+}

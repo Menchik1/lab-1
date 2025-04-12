@@ -1,53 +1,91 @@
 /* HomePage.css */
 .home-page {
-    font-family: Arial, sans-serif;
-    padding: 20px;
-    background-color: #f4f4f9;
-    min-height: 100vh;
-  }
-  
-  .home-page h1 {
-    color: #333;
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  
-  .object-list {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .object-item {
-    background-color: #fff;
-    margin: 10px 0;
-    padding: 10px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .object-item a {
-    text-decoration: none;
-    color: #61dafb;
-    font-weight: bold;
-  }
-  
-  .object-item a:hover {
-    color: #21a1f1;
-  }
-  
-  .delete-button {
-    background-color: #ff4d4d;
-    color: white;
-    border: none;
-    padding: 5px 10px;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .delete-button:hover {
-    background-color: #cc0000;
-  }
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  background-color: #f4f4f9;
+  min-height: 100vh;
+}
+
+.home-page h1 {
+  color: #333;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.object-list {
+  list-style: none;
+  padding: 0;
+}
+
+.object-item {
+  background-color: #fff;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.object-item a {
+  text-decoration: none;
+  color: #61dafb;
+  font-weight: bold;
+}
+
+.object-item a:hover {
+  color: #21a1f1;
+}
+
+.delete-button {
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.delete-button:hover {
+  background-color: #cc0000;
+  transform: scale(1.05); /* Увеличение при наведении */
+}
+
+.delete-button:active {
+  transform: scale(0.95); /* Уменьшение при нажатии */
+}
+
+.selected-object {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.selected-object h2 {
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.selected-object p {
+  margin: 5px 0;
+  color: #555;
+}
+.safety-rules-button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-bottom: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.safety-rules-button:hover {
+  background-color: #45a049;
+}

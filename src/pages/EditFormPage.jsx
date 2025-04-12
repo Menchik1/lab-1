@@ -32,12 +32,12 @@ function EditFormPage() {
         />
         <input
           type="text"
-          placeholder="Уровень безопасности"
+          placeholder="Описание"
           value={formData.securityLevel}
           onChange={(e) => setFormData({ ...formData, securityLevel: e.target.value })}
         />
         <textarea
-          placeholder="Описание"
+          placeholder="Риски безопасности"
           value={formData.description}
           onChange={(e) => setFormData({ ...formData, description: e.target.value })}
         />

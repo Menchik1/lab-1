@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useParams, useNavigate } from 'react-router-dom';
-import './DetailPage.css'; // Импорт стилей
+import './DetailPage.css'; 
 
 function DetailPage() {
   const { id } = useParams();
@@ -25,11 +25,11 @@ function DetailPage() {
           <p>{object.name}</p>
         </div>
         <div className="detail-item">
-          <label>Уровень безопасности:</label>
+          <label>Описание:</label>
           <p>{object.securityLevel}</p>
         </div>
         <div className="detail-item">
-          <label>Описание:</label>
+          <label>Риски безопасности:</label>
           <p>{object.description}</p>
         </div>
         <button className="back-button" onClick={() => navigate('/')}>Назад</button>

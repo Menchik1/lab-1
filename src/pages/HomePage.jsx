@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
-import './HomePage.css'; // Импорт стилей
+import { Link } from 'react-router-dom'; // Убрали useNavigate, так как кнопка перенесена
+import './HomePage.css';
 
 function HomePage() {
   const [objects, setObjects] = useState([]);
+  const [selectedObject, setSelectedObject] = useState(null);
 
   useEffect(() => {
     axios.get('http://localhost:3001/objects')
@@ -12,7 +13,11 @@ function HomePage() {
       .catch(error => console.error(error));
   }, []);
 
-  const handleDelete = (id) => {
+  const handleSelectObject = (obj) => {
+    setSelectedObject(obj);
+  };
+
+  const handleDeleteObject = (id) => {
     axios.delete(`http://localhost:3001/objects/${id}`)
       .then(() => setObjects(objects.filter(obj => obj.id !== id)))
       .catch(error => console.error(error));
@@ -20,15 +25,31 @@ function HomePage() {
 
   return (
     <div className="home-page">
-      <h1>Список объектов охраны</h1>
+      <h1> Объекты Медицинского учреждения</h1>
       <ul className="object-list">
         {objects.map(obj => (
           <li key={obj.id} className="object-item">
-            <Link to={`/detail/${obj.id}`}>{obj.name}</Link>
-            <button className="delete-button" onClick={() => handleDelete(obj.id)}>Удалить</button>
+            <Link to={`/detail/${obj.id}`} onClick={() => handleSelectObject(obj)}>
+              {obj.name}
+            </Link>
+            <button 
+              className="delete-button" 
+              onClick={() => handleDeleteObject(obj.id)}
+            >
+              Удалить
+            </button>
           </li>
         ))}
       </ul>
+
+      {selectedObject && (
+        <div className="selected-object">
+          <h2>Выбранный объект:</h2>
+          <p>Название: {selectedObject.name}</p>
+          <p>Описание: {selectedObject.securityLevel}</p>
+          <p>Риски безопасности: {selectedObject.description}</p>
+        </div>
+      )}
     </div>
   );
 }
